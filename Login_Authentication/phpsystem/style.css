@@ -1,0 +1,64 @@
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+}
+
+.box{
+	background-color: rebeccapurple;
+	width: 400px;
+	height: 400px;
+	padding: 10px;
+}
+
+header{
+	color: white;
+	font-weight: 500;
+	margin-left: 100px;
+}
+
+form input{
+	width: 200px;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	outline: none;
+	border: none;
+}
+form label{
+	padding-bottom: 5px;
+}
+
+form .field{
+	display: flex;
+	flex-direction: column;
+}
+
+.btn{
+	width: 170px;
+	margin-left: 25px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background-color: white;
+	cursor: pointer;
+	font-size: 18px;
+	color: rebeccapurple;
+}
+.btn:hover{
+	background-color: rebeccapurple;
+	color: white;
+	border: 1px solid white;
+}
+
+.links a{
+	color: yellow;
+}
+
+.message p{
+	color: white;
+}
+
+button{
+	outline: none;
+	border: none;
+}

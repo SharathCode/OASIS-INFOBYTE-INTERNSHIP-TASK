@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="imgs/calculator-icon.png">
+    <title>Calculator-clone</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+    <div class="calculator-display">
+        <input type="text" id="display" readonly>
+        <button onclick="sin()" class="btn">sin</button>
+        <button onclick="cos()" class="btn">cos</button>
+        <button onclick="tan()" class="btn">tan</button>
+        <button onclick="display.value = ''" class="btn">C</button>
+        <button onclick="keypadNumeric('/')" class="btn">/</button>
+        <button onclick="keypadNumeric('*')" class="btn">*</button>
+        <button onclick="sqrt()" class="btn">√</button>
+        <button onclick="power()" class="btn">x<sup>y</sup></button>
+        <button onclick="keypadNumeric('7')">7</button>
+        <button onclick="keypadNumeric('8')">8</button>
+        <button onclick="keypadNumeric('9')">9</button>
+        <button onclick="keypadNumeric('+')" class="btn">+</button>
+        <button onclick="keypadNumeric('4')">4</button>
+        <button onclick="keypadNumeric('5')">5</button>
+        <button onclick="keypadNumeric('6')">6</button>
+        <button onclick="keypadNumeric('-')" class="btn">-</button>
+        <button onclick="keypadNumeric('1')">1</button>
+        <button onclick="keypadNumeric('2')">2</button>
+        <button onclick="keypadNumeric('3')">3</button>
+        <button onclick="backspace()" class="btn">&larr;</button>
+        <button onclick="keypadNumeric('00')" class="btn">00</button>
+        <button onclick="keypadNumeric('0')">0</button>
+        <button onclick="keypadNumeric('.')" class="btn">.</button>
+        <button onclick="answer()" class="btn">=</button>
+    </div>
+
+    <script>
+        const display = document.getElementById("display");
+
+function keypadNumeric(value) {
+  display.value += value;
+}
+
+function backspace() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
+
+function answer() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "Error";
+  }
+}
+
+function sqrt() {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.sqrt(currentValue);
+}
+
+function power() {
+  const currentValue = parseFloat(display.value);
+  const exponent = parseFloat(prompt("Enter the exponent:"));
+  display.value = Math.pow(currentValue, exponent);
+}
+
+function sin() {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.sin(currentValue * (Math.PI / 180));
+}
+
+function cos() {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.cos(currentValue * (Math.PI / 180));
+}
+
+function tan() {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.tan(currentValue * (Math.PI / 180));
+}
+    </script>
+</body>
+</html>
